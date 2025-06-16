@@ -5,7 +5,7 @@ ADD . .
 ARG TARGETARCH
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=${TARGETARCH} go build -v -a -ldflags '-extldflags "-static"' -o csi-cos_${TARGETARCH} cmd/cosfs/cosfs/main.go
 
-FROM alpine:3.15.0
+FROM alpine:3.22.0
 
 LABEL maintainers="TencentCloud TKE Authors"
 LABEL description="TencentCloud COS CSI Plugin"
